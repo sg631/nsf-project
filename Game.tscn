@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy4dq013ojndp"]
+[gd_scene load_steps=5 format=3 uid="uid://ctjabyoc5ulym"]
 
-[ext_resource type="PackedScene" uid="uid://bkbnoiblp0hha" path="res://Player.tscn" id="1_chwdd"]
+[ext_resource type="PackedScene" uid="uid://bicfvrrdnui24" path="res://Player.tscn" id="1_chwdd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxsm8"]
 
@@ -32,4 +32,4 @@ mesh = SubResource("BoxMesh_bxnp3")
 surface_material_override/0 = SubResource("StandardMaterial3D_dgfwr")
 
 [node name="Player" parent="." instance=ExtResource("1_chwdd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575938, 0.660807, 0.419993)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575938, 1.38908, 0.419993)
