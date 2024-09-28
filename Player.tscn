@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkbnoiblp0hha"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_2sf5x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p363l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_heea1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8g0xc"]
+albedo_color = Color(0.572295, 0.172551, 0.176476, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_2sf5x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_p363l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("SphereMesh_heea1")
+surface_material_override/0 = SubResource("StandardMaterial3D_8g0xc")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258389, -0.495737)
