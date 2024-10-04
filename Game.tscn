@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctjabyoc5ulym"]
+[gd_scene load_steps=10 format=3 uid="uid://ctjabyoc5ulym"]
 
 [ext_resource type="PackedScene" uid="uid://bicfvrrdnui24" path="res://Player.tscn" id="1_chwdd"]
 
@@ -9,7 +9,26 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgfwr"]
 albedo_color = Color(0.189847, 0.381447, 0.181012, 1)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mcn1p"]
+
+[sub_resource type="Sky" id="Sky_rsar7"]
+sky_material = SubResource("ProceduralSkyMaterial_mcn1p")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_ve4aw"]
+background_mode = 2
+sky = SubResource("Sky_rsar7")
+ambient_light_source = 3
+ambient_light_color = Color(0.860828, 0.908678, 0.690643, 1)
+glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.65
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2jypt"]
+
+[sub_resource type="Compositor" id="Compositor_2veff"]
+
+[node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00646687)
 
 [node name="Lights" type="Node" parent="."]
@@ -33,3 +52,37 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dgfwr")
 
 [node name="Player" parent="." instance=ExtResource("1_chwdd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575938, 1.38908, 0.419993)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ve4aw")
+camera_attributes = SubResource("CameraAttributesPractical_2jypt")
+compositor = SubResource("Compositor_2veff")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 556.0
+offset_top = 304.0
+offset_right = -285.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.75
+anchor_top = 1.5
+anchor_right = 1.0
+anchor_bottom = 1.9
+offset_left = -0.151993
+offset_top = 0.019989
+offset_right = -0.0280151
+offset_bottom = 0.0799866
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.17881, 0.17881, 0.17881, 1)

@@ -1,26 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://bicfvrrdnui24"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2sf5x"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="2_40n5x"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p363l"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_60cey"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_60kmi"]
+[sub_resource type="SphereMesh" id="SphereMesh_kb5u3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8g0xc"]
-albedo_color = Color(0.572295, 0.172551, 0.176476, 1)
-
-[node name="Node3D" type="Node3D"]
+[node name="Player" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_2sf5x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(0.94821, 0, 0, 0, 1.80738, 0, 0, 0, 0.975207, 0, 0, 0)
-shape = SubResource("BoxShape3D_p363l")
+shape = SubResource("BoxShape3D_60cey")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_60kmi")
-surface_material_override/0 = SubResource("StandardMaterial3D_8g0xc")
+layers = 0
+mesh = SubResource("SphereMesh_kb5u3")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258389, -0.495737)
+script = ExtResource("2_40n5x")
