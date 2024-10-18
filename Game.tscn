@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctjabyoc5ulym"]
+[gd_scene load_steps=14 format=3 uid="uid://ctjabyoc5ulym"]
 
 [ext_resource type="PackedScene" uid="uid://bicfvrrdnui24" path="res://Player.tscn" id="1_chwdd"]
 
@@ -27,6 +27,15 @@ fog_light_energy = 0.65
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2jypt"]
 
 [sub_resource type="Compositor" id="Compositor_2veff"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_lnaq3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dldv4"]
+albedo_color = Color(0.571514, 0.33559, 0.220268, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d13mh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yrk4r"]
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00646687)
@@ -63,6 +72,7 @@ follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 556.0
@@ -86,3 +96,18 @@ offset_bottom = 0.0799866
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.17881, 0.17881, 0.17881, 1)
+
+[node name="Big Chungus" type="StaticBody3D" parent="."]
+transform = Transform3D(-43.23, 66.0242, -183.772, 0, 188.221, 67.6228, 195.272, 14.6167, -40.684, -129.504, 71.4934, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Big Chungus"]
+transform = Transform3D(0.998676, 0, 0, 0, 0.998676, 0, 0, 0, 0.998676, 0, 0, 0)
+mesh = SubResource("SphereMesh_lnaq3")
+surface_material_override/0 = SubResource("StandardMaterial3D_dldv4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Big Chungus/MeshInstance3D"]
+transform = Transform3D(0.580967, 0, 0, 0, 0.512681, 0, 0, 0, 0.604845, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_d13mh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Big Chungus"]
+shape = SubResource("SphereShape3D_yrk4r")
