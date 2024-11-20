@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://er38wfy6uw8y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w7w4h"]
+
+[sub_resource type="CameraTexture" id="CameraTexture_aj3yt"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ngd0d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nud0"]
+next_pass = SubResource("PhysicalSkyMaterial_ngd0d")
+albedo_texture = SubResource("CameraTexture_aj3yt")
+
+[node name="Portal" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_w7w4h")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nud0")

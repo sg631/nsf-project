@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 
-var SPEED = 5.0
-var JUMP_VELOCITY = 6
+var SPEED = 10
+var JUMP_VELOCITY = 30
 
 
 func _physics_process(delta: float) -> void:
@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_pressed("sprint"):
-		SPEED = 7
+		SPEED = 20
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

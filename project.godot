@@ -53,6 +53,10 @@ camLock={
 ]
 }
 
+[physics]
+
+3d/default_gravity=25.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
