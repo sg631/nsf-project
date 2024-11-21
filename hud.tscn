@@ -1,4 +1,20 @@
-[gd_scene format=3 uid="uid://b57x7gaapg5vs"]
+[gd_scene load_steps=3 format=3 uid="uid://b57x7gaapg5vs"]
+
+[ext_resource type="Texture2D" uid="uid://dktohvf83xnco" path="res://icon.svg" id="1_df3nc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nntpj"]
+bg_color = Color(0, 0, 0, 0.286275)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.294118)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.74902)
+shadow_offset = Vector2(10, 10)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +23,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.721
+anchor_right = 0.986
+anchor_bottom = 0.954
+offset_left = 0.567999
+offset_top = -0.208008
+offset_right = 0.12793
+offset_bottom = -0.192017
+theme_override_styles/panel = SubResource("StyleBoxFlat_nntpj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("1_df3nc")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("1_df3nc")
