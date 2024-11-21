@@ -1,7 +1,5 @@
 [gd_scene load_steps=3 format=3 uid="uid://b57x7gaapg5vs"]
 
-[ext_resource type="Texture2D" uid="uid://dktohvf83xnco" path="res://icon.svg" id="1_df3nc"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nntpj"]
 bg_color = Color(0, 0, 0, 0.286275)
 border_width_left = 2
@@ -15,6 +13,13 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_color = Color(0, 0, 0, 0.74902)
 shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgmk7"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -42,15 +47,40 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 28
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+[node name="Slot1" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-button_mask = 0
-texture_normal = ExtResource("1_df3nc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgmk7")
 
-[node name="TextureButton2" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+[node name="Image" type="TextureRect" parent="PanelContainer/HBoxContainer/Slot1"]
 layout_mode = 2
-button_mask = 0
-texture_normal = ExtResource("1_df3nc")
+
+[node name="Slot2" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgmk7")
+
+[node name="Image" type="TextureRect" parent="PanelContainer/HBoxContainer/Slot2"]
+layout_mode = 2
+
+[node name="Slot3" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgmk7")
+
+[node name="Image" type="TextureRect" parent="PanelContainer/HBoxContainer/Slot3"]
+layout_mode = 2
+
+[node name="Slot4" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgmk7")
+
+[node name="Image" type="TextureRect" parent="PanelContainer/HBoxContainer/Slot4"]
+layout_mode = 2
+
+[node name="Slot5" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgmk7")
+
+[node name="Image" type="TextureRect" parent="PanelContainer/HBoxContainer/Slot5"]
+layout_mode = 2

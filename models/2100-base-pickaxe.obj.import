@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ppgervuca5pv"
+path="res://.godot/imported/2100-base-pickaxe.obj-d7394d265f0bd6ebd8ce7d374127da32.mesh"
+
+[deps]
+
+files=["res://.godot/imported/2100-base-pickaxe.obj-d7394d265f0bd6ebd8ce7d374127da32.mesh"]
+
+source_file="res://models/2100-base-pickaxe.obj"
+dest_files=["res://.godot/imported/2100-base-pickaxe.obj-d7394d265f0bd6ebd8ce7d374127da32.mesh", "res://.godot/imported/2100-base-pickaxe.obj-d7394d265f0bd6ebd8ce7d374127da32.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
