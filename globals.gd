@@ -52,6 +52,4 @@ func _process(delta: float) -> void:
 		inventoryNumber = 0;
 	for string in inventory:
 		get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(inventory.find(string)+1) + "/Image").set_texture(load(item_defs[string].iconPath));
-	get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(inventoryNumber+1)).get_stylebox("panel").border_width_left = 10;
-	for node in get_node("/root/Game/Control/PanelContainer/HBoxContainer").get_children():
-		node.get_stylebox("panel").border_width_left = 0;
+	get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(inventoryNumber+1))
