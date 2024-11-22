@@ -19,7 +19,7 @@ const item_defs = {
 		"iconPath":"res://textures/notfound.png",
 		"tool":{
 			"isTool":true,
-			"modelPath": "res://2100-base-pickaxe.obj",
+			"modelPath": "res://models/2100-base-pickaxe.obj",
 			"durability": {
 				"current": 0,
 				"max": 100,
@@ -69,4 +69,10 @@ func _process(delta: float) -> void:
 		if (_iteration != inventoryNumber):
 			get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1)).add_theme_stylebox_override("panel", borderlessInventoryStyleBox)
 		_iteration += 1;
+	if(item_defs[inventory[inventoryNumber]].tool.isTool && item_defs[inventory[inventoryNumber]].tool.modelPath != ""):
+		get_node("/root/Game/Player/Player/Camera3D/3dhud/held_item").visible = true;
+		var _tempMeshStorage = load(item_defs[inventory[inventoryNumber]].tool.modelPath);
+		get_node("/root/Game/Player/Player/Camera3D/3dhud/held_item").mesh = _tempMeshStorage;
+	else:
+		get_node("/root/Game/Player/Player/Camera3D/3dhud/held_item").hide()
 	#print(get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot2").get_theme_stylebox("panel").border_width_left)
