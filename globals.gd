@@ -52,21 +52,21 @@ func _process(delta: float) -> void:
 		inventoryNumber = 0;
 	if(inventoryNumber > len(inventory) - 1):
 		inventoryNumber = len(inventory) - 1
-	for string in inventory:
-		var _iteration = 0;
-		var borderlessInventoryStyleBox: StyleBoxFlat = get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1)).get_theme_stylebox("panel").duplicate()
-		get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1) + "/Image").set_texture(load(item_defs[string].iconPath));
-		borderlessInventoryStyleBox.border_width_left = 0;
-		borderlessInventoryStyleBox.border_width_right = 0;
-		borderlessInventoryStyleBox.border_width_top = 0;
-		borderlessInventoryStyleBox.border_width_bottom = 0;
-		get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1)).add_theme_stylebox_override("panel", borderlessInventoryStyleBox)
-		
-		_iteration += 1;
 	var borderedInventoryStyleBox: StyleBoxFlat = get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(inventoryNumber+1)).get_theme_stylebox("panel").duplicate()
 	borderedInventoryStyleBox.border_width_left = 10;
 	borderedInventoryStyleBox.border_width_right = 10;
 	borderedInventoryStyleBox.border_width_top = 10;
 	borderedInventoryStyleBox.border_width_bottom = 10;
 	get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(inventoryNumber+1)).add_theme_stylebox_override("panel", borderedInventoryStyleBox)
+	var _iteration = 0;
+	for string in inventory:
+		var borderlessInventoryStyleBox: StyleBoxFlat = get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1)).get_theme_stylebox("panel").duplicate()
+		get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1) + "/Image").set_texture(load(item_defs[string].iconPath));
+		borderlessInventoryStyleBox.border_width_left = 0;
+		borderlessInventoryStyleBox.border_width_right = 0;
+		borderlessInventoryStyleBox.border_width_top = 0;
+		borderlessInventoryStyleBox.border_width_bottom = 0;
+		if (_iteration != inventoryNumber):
+			get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot" + str(_iteration+1)).add_theme_stylebox_override("panel", borderlessInventoryStyleBox)
+		_iteration += 1;
 	#print(get_node("/root/Game/Control/PanelContainer/HBoxContainer/Slot2").get_theme_stylebox("panel").border_width_left)

@@ -4,5 +4,5 @@
 
 [node name="3dhud" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="held_item" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_kuefj")
