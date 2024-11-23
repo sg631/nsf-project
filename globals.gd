@@ -2,7 +2,7 @@ extends Node
 const item_defs = {
 	"wood":{
 		"displayName":"Wood",
-		"iconPath":"res://textures/icon.svg",
+		"iconPath":"res://textures/2100_item-bg.png",
 		"tool":{
 			"isTool":false,
 			"modelPath":"",
@@ -16,7 +16,7 @@ const item_defs = {
 	},
 	"iron-pickaxe":{
 		"displayName":"Iron Pickaxe",
-		"iconPath":"res://textures/notfound.png",
+		"iconPath":"res://textures/item-thumbnails/pickaxe.png",
 		"tool":{
 			"isTool":true,
 			"modelPath": "res://models/2100-base-pickaxe.obj",
