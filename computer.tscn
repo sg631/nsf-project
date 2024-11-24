@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://768dnjt6bfa8"]
+
+[ext_resource type="ArrayMesh" uid="uid://bwhx0n3pblhmj" path="res://models/computer.obj" id="1_uc6ft"]
+[ext_resource type="PackedScene" uid="uid://bh81web01umlj" path="res://computer_menu_select.tscn" id="2_0rt2y"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u2a05"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rolfk"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_u2a05")
+
+[node name="Computer" type="Node3D"]
+
+[node name="Computer" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Computer"]
+mesh = ExtResource("1_uc6ft")
+surface_material_override/1 = SubResource("StandardMaterial3D_rolfk")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Computer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07517, -1.04115)
+spot_angle = 0.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1152, 648)
+size_2d_override = Vector2i(1152, 648)
+size_2d_override_stretch = true
+
+[node name="ScreenSelectMenu" parent="SubViewport" instance=ExtResource("2_0rt2y")]
