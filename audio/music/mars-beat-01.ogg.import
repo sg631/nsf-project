@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/mars-beat-01.ogg-f2eca4af4e783fbf75019549bbe6
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0.0
 bpm=0.0
 beat_count=0

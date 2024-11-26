@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://dsqn11138hsrm"
+uid="uid://22ge7iqf63ai"
 path="res://.godot/imported/mars-beat-02.ogg-d73de7ee6e70d6217fe39ef1631ca704.oggvorbisstr"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/mars-beat-02.ogg-d73de7ee6e70d6217fe39ef1631c
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=140.0
 beat_count=0
 bar_beats=4

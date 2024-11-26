@@ -1,5 +1,4 @@
 extends Node
-var mdt = MeshDataTool.new()
 const item_defs = {
 	"wood":{
 		"displayName":"Wood",
