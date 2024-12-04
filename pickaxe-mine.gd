@@ -1,4 +1,4 @@
-#extends StaticBody3D
+extends StaticBody3D
 #
 ## Variables and constants
 #var target_position = Vector3(0, 0, 0)
