@@ -8,11 +8,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuButton" type="MenuButton" parent="."]
-layout_mode = 0
-offset_left = 95.0001
-offset_top = 157.0
-offset_right = 193.0
-offset_bottom = 188.0
-scale = Vector2(10.3337, 10.781)
-text = "Test Button"
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.145
+anchor_right = 0.737
+anchor_bottom = 0.241
+offset_left = -0.320038
+offset_top = 0.0399933
+offset_right = -0.0240479
+offset_bottom = -0.168015
+text = "Pause Game"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.145
+anchor_right = 0.737
+anchor_bottom = 0.241
+offset_left = 2.67996
+offset_top = 128.04
+offset_right = 2.97595
+offset_bottom = 127.832
+text = "Control Rovers"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.145
+anchor_right = 0.737
+anchor_bottom = 0.241
+offset_left = 7.67996
+offset_top = 278.04
+offset_right = 7.97595
+offset_bottom = 277.832
+text = "Communicate"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.145
+anchor_right = 0.737
+anchor_bottom = 0.241
+offset_left = 15.68
+offset_top = 417.04
+offset_right = 15.976
+offset_bottom = 416.832
+text = "Computer: Home"
