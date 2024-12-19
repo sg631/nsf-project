@@ -30,11 +30,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 	#rotation.x -= Input.get_last_mouse_velocity().y/10000;
-	rotation.y -= Input.get_last_mouse_velocity().x/10000;
-	if Input.is_action_just_pressed("camLock"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		rotation.y -= Input.get_last_mouse_velocity().x/10000;
 	
-	if Input.is_action_just_pressed("exit"):
+	if Input.is_action_just_pressed("exit") && !Globals.usingComputer:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	move_and_slide()

@@ -36,13 +36,13 @@ var inventory = [
 	"wood",
 ]
 var inventoryNumber = 0;
+var usingComputer = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	context_label("Hello. You are the project coordinator of the  Mars Retreat and Rebound Initiative. Welcome to Mars. Your first task here today will be to establish the  living quarters for the first batch of new recruits, and work with them to take the next steps, assuming the responsibilities of a new nation. Your task is not a small one, being no less than recruiting entire nations under one cause: survival.Good luck, you'll need it.")
+	context_label("Hello. You are the project coordinator of the  Mars Retreat and Rebound Initiative. Welcome to Mars. Your first task here today will be to establish the  living quarters for the first batch of new recruits, and work with them to take the next steps, assuming the responsibilities of a new nation. Your task is not a small one, being no less than recruiting entire nations under one cause: survival. Good luck, you'll need it.")
 
 func context_label(text:String, nonstutter_timecap_enabled:bool = false, nonstutter_timecap:float = 0, stutter:bool = true, stutter_delay:int = 50, pause_symbols_enabled:bool = true, pause_symbol_delay:int = 500, pause_symbols:Array = [",", ".", "?", "!"]):
-	#TODO - Make so if iteration of letter in stutter is greater than seventy, add an enter.
 	get_node("/root/Game/Control/ContextLabel").text = "";
 	if !stutter:
 		get_node("/root/Game/Control/ContextLabel").text = text;
@@ -51,9 +51,8 @@ func context_label(text:String, nonstutter_timecap_enabled:bool = false, nonstut
 			get_node("/root/Game/Control/ContextLabel").text = "";
 	if stutter:
 		var _iteration = 0;
-		print("stutter enabled")
 		for letter in text:
-			print("now adding letter '" + letter + "' in text " + text + " with delay of " + str(stutter_delay) + "ms")
+			
 			await get_tree().create_timer(0.05).timeout;
 			get_node("/root/Game/Control/ContextLabel").text += letter;
 			get_node("/root/Game/Audio/Sounds/Typing").play()

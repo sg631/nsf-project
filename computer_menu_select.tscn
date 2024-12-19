@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bh81web01umlj"]
+[gd_scene load_steps=3 format=3 uid="uid://bh81web01umlj"]
+
+[ext_resource type="Texture2D" uid="uid://b0gt322mts5w3" path="res://textures/hud/computer/icons/chat.png" id="1_rpwtx"]
+[ext_resource type="Texture2D" uid="uid://c3rlkx87yka4s" path="res://textures/pretty-cool-icon.png" id="2_5l83i"]
 
 [node name="ScreenSelectMenu" type="Control"]
 layout_mode = 3
@@ -8,54 +11,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.285
-anchor_top = 0.145
-anchor_right = 0.737
-anchor_bottom = 0.241
-offset_left = -0.320038
-offset_top = 0.0399933
-offset_right = -0.0240479
-offset_bottom = -0.168015
-text = "Pause Game"
+anchor_left = 0.357
+anchor_top = 0.884
+anchor_right = 0.412
+anchor_bottom = 0.983
+offset_left = -0.264038
+offset_top = 0.167969
+offset_right = 0.375977
+offset_bottom = 0.0159912
+texture_normal = ExtResource("1_rpwtx")
+texture_pressed = ExtResource("2_5l83i")
+stretch_mode = 0
 
-[node name="Button2" type="Button" parent="."]
+[node name="TextureButton2" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.285
-anchor_top = 0.145
-anchor_right = 0.737
-anchor_bottom = 0.241
-offset_left = 2.67996
-offset_top = 128.04
-offset_right = 2.97595
-offset_bottom = 127.832
-text = "Control Rovers"
+anchor_left = 0.547
+anchor_top = 0.88
+anchor_right = 0.602
+anchor_bottom = 0.978
+offset_left = -0.144043
+offset_top = -0.240051
+offset_right = 0.495911
+offset_bottom = 0.255981
+texture_normal = ExtResource("1_rpwtx")
+texture_pressed = ExtResource("2_5l83i")
+stretch_mode = 0
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.285
-anchor_top = 0.145
-anchor_right = 0.737
-anchor_bottom = 0.241
-offset_left = 7.67996
-offset_top = 278.04
-offset_right = 7.97595
-offset_bottom = 277.832
-text = "Communicate"
-
-[node name="Button4" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.285
-anchor_top = 0.145
-anchor_right = 0.737
-anchor_bottom = 0.241
-offset_left = 15.68
-offset_top = 417.04
-offset_right = 15.976
-offset_bottom = 416.832
-text = "Computer: Home"
+[node name="Cursor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
