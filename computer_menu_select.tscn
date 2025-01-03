@@ -24,6 +24,7 @@ offset_right = 0.375977
 offset_bottom = 0.0159912
 texture_normal = ExtResource("1_rpwtx")
 texture_pressed = ExtResource("2_5l83i")
+texture_hover = ExtResource("2_5l83i")
 stretch_mode = 0
 
 [node name="TextureButton2" type="TextureButton" parent="."]
@@ -39,6 +40,7 @@ offset_right = 0.495911
 offset_bottom = 0.255981
 texture_normal = ExtResource("1_rpwtx")
 texture_pressed = ExtResource("2_5l83i")
+texture_hover = ExtResource("2_5l83i")
 stretch_mode = 0
 
 [node name="Cursor" type="ColorRect" parent="."]
