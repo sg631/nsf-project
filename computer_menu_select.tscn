@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh81web01umlj"]
+[gd_scene load_steps=7 format=3 uid="uid://bh81web01umlj"]
 
+[ext_resource type="Texture2D" uid="uid://d4jeljr5onfi1" path="res://textures/hud/computer/desktop_bg.png" id="1_r817m"]
 [ext_resource type="Texture2D" uid="uid://b0gt322mts5w3" path="res://textures/hud/computer/icons/chat.png" id="1_rpwtx"]
-[ext_resource type="Texture2D" uid="uid://c3rlkx87yka4s" path="res://textures/pretty-cool-icon.png" id="2_5l83i"]
+[ext_resource type="Texture2D" uid="uid://2uarf55a1f5i" path="res://textures/hud/computer/icons/camera.png" id="3_086tg"]
+[ext_resource type="Texture2D" uid="uid://dk13f4a2e3cqd" path="res://textures/hud/computer/icons/message_icon.png" id="3_jduh4"]
+[ext_resource type="Script" path="res://app_opener.gd" id="3_l44ox"]
+[ext_resource type="Texture2D" uid="uid://depamledhjgv3" path="res://textures/hud/computer/icons/base_controls.png" id="4_hd3v5"]
 
 [node name="ScreenSelectMenu" type="Control"]
 layout_mode = 3
@@ -11,39 +15,63 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.357
-anchor_top = 0.884
-anchor_right = 0.412
-anchor_bottom = 0.983
-offset_left = -0.264038
-offset_top = 0.167969
-offset_right = 0.375977
-offset_bottom = 0.0159912
-texture_normal = ExtResource("1_rpwtx")
-texture_pressed = ExtResource("2_5l83i")
-texture_hover = ExtResource("2_5l83i")
-stretch_mode = 0
-
-[node name="TextureButton2" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.547
-anchor_top = 0.88
-anchor_right = 0.602
-anchor_bottom = 0.978
-offset_left = -0.144043
-offset_top = -0.240051
-offset_right = 0.495911
-offset_bottom = 0.255981
-texture_normal = ExtResource("1_rpwtx")
-texture_pressed = ExtResource("2_5l83i")
-texture_hover = ExtResource("2_5l83i")
-stretch_mode = 0
-
 [node name="Cursor" type="ColorRect" parent="."]
+z_index = 100
 layout_mode = 0
 offset_right = 10.0
 offset_bottom = 10.0
+
+[node name="Desktop BG" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 646.0
+texture = ExtResource("1_r817m")
+stretch_mode = 4
+
+[node name="Taskbar" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 536.0
+offset_right = 524.0
+offset_bottom = 573.0
+scale = Vector2(2.2, 2.2)
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Chat" type="TextureButton" parent="Taskbar"]
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_rpwtx")
+texture_pressed = ExtResource("3_jduh4")
+stretch_mode = 5
+script = ExtResource("3_l44ox")
+metadata/app = "chat"
+
+[node name="Camera" type="TextureButton" parent="Taskbar"]
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_086tg")
+texture_pressed = ExtResource("3_jduh4")
+stretch_mode = 5
+script = ExtResource("3_l44ox")
+metadata/app = "camera"
+
+[node name="BaseControls" type="TextureButton" parent="Taskbar"]
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_hd3v5")
+texture_pressed = ExtResource("3_jduh4")
+stretch_mode = 5
+script = ExtResource("3_l44ox")
+metadata/app = "base_controls"
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(0, 36)

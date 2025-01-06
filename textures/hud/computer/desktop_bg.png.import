@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk13f4a2e3cqd"
-path="res://.godot/imported/Message_Icon_NSF-GA-2024.png-a1223092ee8d141a29063d50e53f4b25.ctex"
+uid="uid://d4jeljr5onfi1"
+path="res://.godot/imported/desktop_bg.png-5118d0a664db09fa786fb3a243724a01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/NSF-GA-2024 png/Message_Icon_NSF-GA-2024.png"
-dest_files=["res://.godot/imported/Message_Icon_NSF-GA-2024.png-a1223092ee8d141a29063d50e53f4b25.ctex"]
+source_file="res://textures/hud/computer/desktop_bg.png"
+dest_files=["res://.godot/imported/desktop_bg.png-5118d0a664db09fa786fb3a243724a01.ctex"]
 
 [params]
 

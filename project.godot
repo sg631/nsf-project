@@ -13,6 +13,8 @@ config_version=5
 config/name="NSF-Project"
 run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://textures/hud/computer/desktop_bg.png"
+boot_splash/use_filter=false
 config/icon="res://textures/pretty-cool-icon.png"
 
 [autoload]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2uarf55a1f5i"
-path="res://.godot/imported/Camera_Icon_NSF-GA-2024.png-387d0aaf57c5f10fcddff37882b15f6e.ctex"
+uid="uid://depamledhjgv3"
+path="res://.godot/imported/base_controls.png-aec7def0977eeae3ff71c62684394a66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/NSF-GA-2024 png/Camera_Icon_NSF-GA-2024.png"
-dest_files=["res://.godot/imported/Camera_Icon_NSF-GA-2024.png-387d0aaf57c5f10fcddff37882b15f6e.ctex"]
+source_file="res://textures/hud/computer/icons/base_controls.png"
+dest_files=["res://.godot/imported/base_controls.png-aec7def0977eeae3ff71c62684394a66.ctex"]
 
 [params]
 
