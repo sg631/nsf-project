@@ -4,13 +4,7 @@ extends TextureButton
 func _ready() -> void:
 	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if get_global_rect().intersects(menu.get_child(1).get_global_rect()) && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		on_pressed()
-
-func on_pressed() -> void:
+func _pressed() -> void:
 	var loaded_app = load("res://apps/" + get_meta("app") + "_app.tscn")
 	var appWindow = Window.new()
 	if loaded_app != null:
