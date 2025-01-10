@@ -26,12 +26,12 @@ func _input(event):
 		
 		# Propagate the new event to the virtual screen
 		$/root/Game/HomeBase/Computer/SubViewport.push_input(new_event)
-		$/root/Game/HomeBase/Computer/SubViewport/ScreenSelectMenu/Cursor.position = translated_position
+		$/root/Game/HomeBase/Computer/SubViewport/ScreenSelectMenu/CanvasLayer/Cursor.position = translated_position
 	if event is InputEventMouseButton:
 		var new_event = InputEventMouseButton.new();
 		new_event.button_index = event.button_index;
 		new_event.pressed = event.pressed;
-		new_event.position = $/root/Game/HomeBase/Computer/SubViewport/ScreenSelectMenu/Cursor.position;
+		new_event.position = $/root/Game/HomeBase/Computer/SubViewport/ScreenSelectMenu/CanvasLayer/Cursor.position;
 		$/root/Game/HomeBase/Computer/SubViewport.push_input(new_event)
 
 func translate_mouse_position(mouse_pos: Vector2, screen_size: Vector2, virtual_screen_size: Vector2) -> Vector2:
