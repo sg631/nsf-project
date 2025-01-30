@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bicfvrrdnui24"]
+[gd_scene load_steps=5 format=3 uid="uid://bicfvrrdnui24"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2sf5x"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="2_40n5x"]
-[ext_resource type="PackedScene" uid="uid://ueyfd7uneoom" path="res://3d_hud.tscn" id="3_dyvr8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_60cey"]
 size = Vector3(1.5, 4, 1)
@@ -25,6 +24,3 @@ mesh = SubResource("SphereMesh_kb5u3")
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -0.5)
 script = ExtResource("2_40n5x")
-
-[node name="3dhud" parent="Player/Camera3D" instance=ExtResource("3_dyvr8")]
-transform = Transform3D(-9.90399e-09, 4.61831e-09, -0.25, 0.105655, 0.226577, 0, 0.226577, -0.105655, -1.09278e-08, -0.783046, -0.272005, -0.775648)

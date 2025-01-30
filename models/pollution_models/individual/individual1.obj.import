@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1xh724ufmext"
+path="res://.godot/imported/individual1.obj-849d0f2343b1debe2f3727679a10f19d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/individual1.obj-849d0f2343b1debe2f3727679a10f19d.mesh"]
+
+source_file="res://models/pollution_models/individual/individual1.obj"
+dest_files=["res://.godot/imported/individual1.obj-849d0f2343b1debe2f3727679a10f19d.mesh", "res://.godot/imported/individual1.obj-849d0f2343b1debe2f3727679a10f19d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

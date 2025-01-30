@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ueyfd7uneoom"]
-
-[ext_resource type="ArrayMesh" uid="uid://ppgervuca5pv" path="res://models/2100-base-pickaxe.obj" id="1_kuefj"]
-
-[node name="3dhud" type="Node3D"]
-
-[node name="held_item" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_kuefj")

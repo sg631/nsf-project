@@ -1,0 +1,486 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4v8cxshae5lh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rmo2"]
+bg_color = Color(0.17881, 0.17881, 0.17881, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_huaud"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n0udo"]
+size = Vector2(100, 100)
+
+[node name="CodeApp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_right = 0.303955
+offset_bottom = 4.0
+theme_override_constants/autohide = 0
+split_offset = 13
+
+[node name="Control" type="Control" parent="VSplitContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="GraphEdit" type="GraphEdit" parent="VSplitContainer/Control"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+anchor_left = -0.003
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 28.692
+offset_left = 1.45
+offset_top = -96.0
+offset_right = 2.0
+offset_bottom = -5534.4
+scroll_offset = Vector2(-2.38419e-07, -536)
+grid_pattern = 1
+right_disconnects = true
+show_zoom_label = true
+
+[node name="GraphNode" type="GraphNode" parent="VSplitContainer/Control/GraphEdit"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 200.0
+offset_right = 305.0
+offset_bottom = 336.0
+mouse_filter = 1
+position_offset = Vector2(172, -336)
+resizable = true
+title = "Title of Program"
+
+[node name="Control2" type="Control" parent="VSplitContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VSplitContainer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.991
+offset_right = 4.0
+offset_bottom = -0.0400391
+current_tab = 3
+drag_to_rearrange_enabled = true
+
+[node name="Home" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Panel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Home"]
+layout_mode = 0
+offset_right = 511.0
+offset_bottom = 404.0
+
+[node name="FileList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.208
+anchor_right = 1.0
+anchor_bottom = 0.851
+offset_top = -20.032
+offset_bottom = 0.195984
+item_count = 2
+item_0/text = "Level 6 Code"
+item_1/text = "Level 4 Code"
+
+[node name="RecentFilesLabel" type="Label" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.136
+offset_left = -4.0
+offset_right = -1.0
+offset_bottom = 1.056
+theme_override_font_sizes/font_size = 30
+text = "Recent Files"
+horizontal_alignment = 1
+
+[node name="OpenFile" type="Button" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17
+anchor_top = 0.871
+anchor_right = 0.432
+anchor_bottom = 0.97
+offset_left = 0.129997
+offset_top = 0.115967
+offset_right = 0.248001
+offset_bottom = 0.119995
+theme_override_font_sizes/font_size = 23
+text = "Open"
+
+[node name="CreateFile" type="Button" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.548
+anchor_top = 0.871
+anchor_right = 0.836
+anchor_bottom = 0.973
+offset_left = -0.0280151
+offset_top = 0.115967
+offset_right = -0.196014
+offset_bottom = -0.0920105
+theme_override_font_sizes/font_size = 23
+text = "New"
+
+[node name="Panel2" type="Panel" parent="VSplitContainer/Control2/TabContainer/Home"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.446
+anchor_top = 0.005
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = 0.315979
+offset_top = -0.0250001
+offset_right = -2.0
+offset_bottom = -0.190002
+theme_override_styles/panel = SubResource("StyleBoxFlat_6rmo2")
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Home/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.136
+offset_left = -4.0
+offset_right = -1.0
+offset_bottom = 1.056
+theme_override_font_sizes/font_size = 30
+text = "What's New"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Home/Panel2"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 73.0
+offset_right = 607.0
+offset_bottom = 345.0
+item_count = 6
+item_0/text = "(v1.0.0) Released!"
+item_1/text = "(DEV) Added Upgrades"
+item_2/text = "(DEV) Added Rover Functionality"
+item_3/text = "(DEV) Added Rover Environment"
+item_4/text = "(DEV) Modified Coding Layout"
+item_5/text = "(DEV) Added Coding Editor"
+
+[node name="Level Select" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="LevelList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Level Select"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.067
+anchor_right = 0.976
+anchor_bottom = 0.81
+offset_left = 0.457998
+offset_top = -0.135
+offset_right = -0.304077
+offset_bottom = -0.0500183
+theme_override_font_sizes/font_size = 20
+item_count = 2
+item_0/text = "Level 1"
+item_1/text = "Level 2"
+
+[node name="OpenButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Level Select"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 338.0
+offset_right = 664.0
+offset_bottom = 395.0
+theme_override_font_sizes/font_size = 29
+text = "Open"
+
+[node name="Collected Research" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer/Control2/TabContainer/Collected Research"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_right = 1.0
+offset_bottom = -0.190002
+
+[node name="SnapshotSave" type="Control" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_bottom = 0.019989
+
+[node name="NameEdit" type="LineEdit" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.289
+anchor_top = 0.833
+anchor_right = 0.735
+anchor_bottom = 0.943
+offset_left = 29.288
+offset_top = 0.133972
+offset_right = 0.119995
+offset_bottom = -0.0859985
+placeholder_text = "Snapshot Name"
+
+[node name="SaveButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.841
+anchor_right = 0.98
+anchor_bottom = 0.943
+offset_left = -3.05176e-05
+offset_top = -0.0820007
+offset_right = 0.119995
+offset_bottom = -0.0859985
+text = "Save Snapshot"
+
+[node name="DiagnosticPanel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.319
+anchor_bottom = 1.0
+offset_right = -0.149002
+offset_bottom = 1.0
+
+[node name="Heading" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/Panel/DiagnosticPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.176
+anchor_top = 0.045
+anchor_right = 0.841
+anchor_bottom = 0.127
+offset_left = -0.0320015
+offset_top = -0.135
+offset_right = -0.0619965
+offset_bottom = -0.181
+theme_override_font_sizes/font_size = 21
+text = "Diagnostics"
+
+[node name="ItemList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/Panel/DiagnosticPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.071
+anchor_top = 0.144
+anchor_right = 0.918
+anchor_bottom = 0.96
+offset_left = 0.0779991
+offset_top = -0.0320053
+offset_right = -0.076004
+offset_bottom = 0.119995
+theme_override_font_sizes/font_size = 13
+item_count = 5
+item_0/text = "Day: 18"
+item_0/selectable = false
+item_1/text = "Hour: 8"
+item_2/text = "Minute: 37"
+item_3/text = "Location: 38, 38, 38"
+item_4/text = "Angle: 37*"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.047
+anchor_right = 0.96
+anchor_bottom = 0.77
+offset_left = -0.134003
+offset_top = 0.0119991
+offset_right = -0.160034
+offset_bottom = -0.0800171
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(346, 292)
+render_target_update_mode = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/SubViewportContainer/SubViewport"]
+mesh = SubResource("BoxMesh_huaud")
+
+[node name="Camera3D" type="Camera3D" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.810645, 0, 0.585538, 0, 1, 0, -0.585538, 0, 0.810645, 3.87889, 0, 4.59043)
+
+[node name="SnapshotBrowser" type="Control" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_right = 0.938
+anchor_bottom = 1.0
+offset_left = -0.275999
+offset_right = 30.464
+offset_bottom = -3.0
+
+[node name="FlowContainer" type="FlowContainer" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer"]
+custom_minimum_size = Vector2(575, 400)
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_n0udo")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.727
+anchor_right = 0.8
+anchor_bottom = 0.88
+offset_top = -0.0500107
+offset_bottom = -1.52588e-05
+text = "Picture 1"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_n0udo")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.727
+anchor_right = 0.8
+anchor_bottom = 0.88
+offset_top = -0.0500107
+offset_bottom = -1.52588e-05
+text = "Picture 2"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_n0udo")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.727
+anchor_right = 0.8
+anchor_bottom = 0.88
+offset_top = -0.0500107
+offset_bottom = -1.52588e-05
+text = "Picture 3"
+horizontal_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_n0udo")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.727
+anchor_right = 0.8
+anchor_bottom = 0.88
+offset_top = -0.0500107
+offset_bottom = -1.52588e-05
+text = "Picture 4"
+horizontal_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_n0udo")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer/TextureRect5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.727
+anchor_right = 0.8
+anchor_bottom = 0.88
+offset_top = -0.0500107
+offset_bottom = -1.52588e-05
+text = "Picture 5"
+horizontal_alignment = 1
+
+[node name="TextureRect6" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_n0udo")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotBrowser/ScrollContainer/FlowContainer/TextureRect6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.727
+anchor_right = 0.8
+anchor_bottom = 0.88
+offset_top = -0.0500107
+offset_bottom = -1.52588e-05
+text = "Picture 5"
+horizontal_alignment = 1
+
+[node name="Upgrades" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer/Control2/TabContainer/Upgrades"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_right = 1.0
+offset_bottom = 0.0249634
+
+[node name="Control" type="Control" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Control"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 404.0
+item_count = 1
+item_0/text = "Tech Advancement"
+
+[node name="Control2" type="Control" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Program" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Launch" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5

@@ -1,0 +1,149 @@
+[gd_scene load_steps=3 format=3 uid="uid://iw7hbtr2qo50"]
+
+[ext_resource type="Texture2D" uid="uid://dk13f4a2e3cqd" path="res://textures/hud/computer/icons/message_icon.png" id="1_a5mtr"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gx3pr"]
+color = Color(0.60933, 0.60933, 0.60933, 1)
+grow_begin = 6.0
+thickness = 6
+
+[node name="SettingsApp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+current_tab = 0
+
+[node name="General" type="Control" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/General"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_right = -1.0
+offset_bottom = 0.0849609
+columns = 5
+
+[node name="SaveButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Save"
+metadata/Function = "save"
+metadata/Category = "general"
+
+[node name="QuitButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+metadata/Function = "quit"
+metadata/Category = "general"
+
+[node name="SaveQuitButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Save & Quit"
+metadata/Function = "savequit"
+metadata/category = "general"
+
+[node name="WipeSaveButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Wipe Save"
+metadata/Function = "wipesave"
+metadata/category = "general"
+
+[node name="FullscreenButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen"
+metadata/Function = "fullscreen"
+metadata/Category = "general"
+
+[node name="WindowedButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Windowed"
+metadata/Function = "windowed"
+metadata/Category = "general"
+
+[node name="BorderlessButton" type="Button" parent="TabContainer/General/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "Borderless"
+metadata/Function = "borderless"
+metadata/Category = "general"
+
+[node name="Audio" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="FlowContainer" type="FlowContainer" parent="TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_right = 0.309937
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="SoundSlider" type="HSlider" parent="TabContainer/Audio/FlowContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+tooltip_text = "Adjust sound volume"
+theme_override_icons/grabber = ExtResource("1_a5mtr")
+theme_override_styles/slider = SubResource("StyleBoxLine_gx3pr")
+scrollable = false
+
+[node name="MusicVolume" type="HSlider" parent="TabContainer/Audio/FlowContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+tooltip_text = "Adjust Music Volume"
+theme_override_icons/grabber = ExtResource("1_a5mtr")
+theme_override_styles/slider = SubResource("StyleBoxLine_gx3pr")
+scrollable = false
+
+[node name="Other" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
