@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bagcuongato6t"]
+[gd_scene load_steps=7 format=3 uid="uid://bagcuongato6t"]
 
 [ext_resource type="Texture2D" uid="uid://d4jeljr5onfi1" path="res://textures/hud/computer/desktop_bg.png" id="1_beaqt"]
+[ext_resource type="Texture2D" uid="uid://dk13f4a2e3cqd" path="res://textures/hud/computer/icons/message_icon.png" id="2_1b660"]
 [ext_resource type="Texture2D" uid="uid://b84mwsr2ahho8" path="res://textures/hud/computer/icons/settings.png" id="2_c7ltl"]
 [ext_resource type="Texture2D" uid="uid://d27jubimgfn3o" path="res://textures/hud/computer/icons/coding.png" id="2_ww3tm"]
 [ext_resource type="Script" path="res://app_opener.gd" id="3_hn3vy"]
@@ -32,6 +33,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 4.0
 offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_beaqt")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -49,6 +52,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 alignment = 1
+
+[node name="MenuButton" type="TextureButton" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("2_1b660")
+script = ExtResource("3_hn3vy")
+metadata/Name = "Menu"
+metadata/Description = "Quick menu access: quit, access settings, and more."
+metadata/Path = "res://apps/menu_app.tscn"
 
 [node name="SettingsButton" type="TextureButton" parent="HBoxContainer"]
 texture_filter = 1

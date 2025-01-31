@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4v8cxshae5lh"]
+[gd_scene load_steps=7 format=3 uid="uid://c4v8cxshae5lh"]
+
+[ext_resource type="Texture2D" uid="uid://dr41rwrwesiec" path="res://textures/hud/computer/icons/upgrades/transmission.png" id="1_4p6o1"]
+[ext_resource type="Script" path="res://program_edit.gd" id="1_gpifx"]
+[ext_resource type="Texture2D" uid="uid://b22fqoguup08m" path="res://textures/hud/computer/icons/upgrades/control.png" id="2_6c60e"]
+[ext_resource type="Script" path="res://apps/launch_program.gd" id="4_6i7lc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rmo2"]
 bg_color = Color(0.17881, 0.17881, 0.17881, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_huaud"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n0udo"]
 size = Vector2(100, 100)
@@ -30,32 +33,23 @@ split_offset = 13
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="GraphEdit" type="GraphEdit" parent="VSplitContainer/Control"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-anchor_left = -0.003
-anchor_top = 0.5
+[node name="Panel" type="Panel" parent="VSplitContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 28.692
-offset_left = 1.45
-offset_top = -96.0
-offset_right = 2.0
-offset_bottom = -5534.4
-scroll_offset = Vector2(-2.38419e-07, -536)
-grid_pattern = 1
-right_disconnects = true
-show_zoom_label = true
+anchor_bottom = 0.995
+offset_right = 3.0
+offset_bottom = -1.52588e-05
 
-[node name="GraphNode" type="GraphNode" parent="VSplitContainer/Control/GraphEdit"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 200.0
-offset_right = 305.0
-offset_bottom = 336.0
-mouse_filter = 1
-position_offset = Vector2(172, -336)
-resizable = true
-title = "Title of Program"
+[node name="Tree" type="Tree" parent="VSplitContainer/Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_bottom = -0.00502014
+columns = 2
+column_titles_visible = true
+script = ExtResource("1_gpifx")
 
 [node name="Control2" type="Control" parent="VSplitContainer"]
 custom_minimum_size = Vector2(0, 200)
@@ -68,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 0.991
 offset_right = 4.0
 offset_bottom = -0.0400391
-current_tab = 3
+current_tab = 5
 drag_to_rearrange_enabled = true
 
 [node name="Home" type="Control" parent="VSplitContainer/Control2/TabContainer"]
@@ -76,12 +70,12 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Panel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Home"]
+[node name="FilePanel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Home"]
 layout_mode = 0
 offset_right = 511.0
 offset_bottom = 404.0
 
-[node name="FileList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+[node name="FileList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Home/FilePanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.208
@@ -93,7 +87,7 @@ item_count = 2
 item_0/text = "Level 6 Code"
 item_1/text = "Level 4 Code"
 
-[node name="RecentFilesLabel" type="Label" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+[node name="RecentFilesLabel" type="Label" parent="VSplitContainer/Control2/TabContainer/Home/FilePanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -105,7 +99,7 @@ theme_override_font_sizes/font_size = 30
 text = "Recent Files"
 horizontal_alignment = 1
 
-[node name="OpenFile" type="Button" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+[node name="OpenFile" type="Button" parent="VSplitContainer/Control2/TabContainer/Home/FilePanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.17
@@ -119,7 +113,7 @@ offset_bottom = 0.119995
 theme_override_font_sizes/font_size = 23
 text = "Open"
 
-[node name="CreateFile" type="Button" parent="VSplitContainer/Control2/TabContainer/Home/Panel"]
+[node name="CreateFile" type="Button" parent="VSplitContainer/Control2/TabContainer/Home/FilePanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.548
@@ -133,7 +127,7 @@ offset_bottom = -0.0920105
 theme_override_font_sizes/font_size = 23
 text = "New"
 
-[node name="Panel2" type="Panel" parent="VSplitContainer/Control2/TabContainer/Home"]
+[node name="VersionPanel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Home"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.446
@@ -146,7 +140,7 @@ offset_right = -2.0
 offset_bottom = -0.190002
 theme_override_styles/panel = SubResource("StyleBoxFlat_6rmo2")
 
-[node name="Label" type="Label" parent="VSplitContainer/Control2/TabContainer/Home/Panel2"]
+[node name="Heading" type="Label" parent="VSplitContainer/Control2/TabContainer/Home/VersionPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -158,7 +152,7 @@ theme_override_font_sizes/font_size = 30
 text = "What's New"
 horizontal_alignment = 1
 
-[node name="ItemList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Home/Panel2"]
+[node name="VersionLog" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Home/VersionPanel"]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 73.0
@@ -194,11 +188,16 @@ item_0/text = "Level 1"
 item_1/text = "Level 2"
 
 [node name="OpenButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Level Select"]
-layout_mode = 0
-offset_left = 464.0
-offset_top = 338.0
-offset_right = 664.0
-offset_bottom = 395.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402
+anchor_top = 0.835
+anchor_right = 0.575
+anchor_bottom = 0.975
+offset_left = 0.09198
+offset_top = -0.175018
+offset_right = 0.449951
+offset_bottom = 0.125
 theme_override_font_sizes/font_size = 29
 text = "Open"
 
@@ -294,29 +293,16 @@ item_2/text = "Minute: 37"
 item_3/text = "Location: 38, 38, 38"
 item_4/text = "Angle: 37*"
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave"]
-layout_mode = 1
-anchors_preset = -1
+[node name="TextureRect" type="TextureRect" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave"]
+layout_mode = 2
 anchor_left = 0.354
 anchor_top = 0.047
-anchor_right = 0.96
-anchor_bottom = 0.77
+anchor_right = 0.956
+anchor_bottom = 0.79
 offset_left = -0.134003
 offset_top = 0.0119991
-offset_right = -0.160034
-offset_bottom = -0.0800171
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(346, 292)
-render_target_update_mode = 0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/SubViewportContainer/SubViewport"]
-mesh = SubResource("BoxMesh_huaud")
-
-[node name="Camera3D" type="Camera3D" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer/SnapshotSave/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.810645, 0, 0.585538, 0, 1, 0, -0.585538, 0, 0.810645, 3.87889, 0, 4.59043)
+offset_right = 0.123962
+offset_bottom = -0.160004
 
 [node name="SnapshotBrowser" type="Control" parent="VSplitContainer/Control2/TabContainer/Collected Research/HSplitContainer"]
 layout_mode = 2
@@ -449,6 +435,7 @@ text = "Picture 5"
 horizontal_alignment = 1
 
 [node name="Upgrades" type="Control" parent="VSplitContainer/Control2/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -460,27 +447,350 @@ anchor_bottom = 0.995
 offset_right = 1.0
 offset_bottom = 0.0249634
 
-[node name="Control" type="Control" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer"]
+[node name="Upgrades" type="Control" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 
-[node name="ItemList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Control"]
-layout_mode = 0
-offset_right = 500.0
-offset_bottom = 404.0
-item_count = 1
-item_0/text = "Tech Advancement"
+[node name="UpgradeList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Upgrades"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 5
+item_0/text = "Transmission Improvement"
+item_0/icon = ExtResource("1_4p6o1")
+item_1/text = "Control Scheme Improvement"
+item_1/icon = ExtResource("2_6c60e")
+item_2/text = "Improved Metal Alloys"
+item_3/text = "Effecient Energy Consumption"
+item_4/text = "Improved Engine Power"
 
-[node name="Control2" type="Control" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer"]
+[node name="Info" type="Control" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+
+[node name="Heading" type="Label" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.961
+anchor_bottom = 0.149
+offset_right = 0.0769653
+offset_bottom = -0.0470009
+theme_override_font_sizes/font_size = 30
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.119
+anchor_right = 0.941
+anchor_bottom = 0.809
+offset_left = -0.290001
+offset_top = 0.0429993
+offset_right = -0.0630493
+offset_bottom = -0.0270081
+bbcode_enabled = true
+text = "[b]______________________________[/b]:
+
+[b]Cost -[/b] X Trash
+
+Improves ______"
+
+[node name="UpgradeButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.864
+anchor_right = 0.602
+anchor_bottom = 0.97
+offset_left = -0.121002
+offset_top = -0.192017
+offset_right = -0.0860291
+offset_bottom = 0.0899963
+theme_override_font_sizes/font_size = 25
+text = "Upgrade"
+
+[node name="AmountInBank" type="Label" parent="VSplitContainer/Control2/TabContainer/Upgrades/HSplitContainer/Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.886
+anchor_right = 0.325
+anchor_bottom = 0.943
+offset_left = -0.00199986
+offset_top = -0.0580139
+offset_right = 0.0249939
+offset_bottom = -0.0290222
+text = "598 Trash Collected"
 
 [node name="Program" type="Control" parent="VSplitContainer/Control2/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer/Control2/TabContainer/Program"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Config" type="Control" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_right = 0.199982
+
+[node name="ConfigTitle" type="Label" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.218
+anchor_top = 0.039
+anchor_right = 0.777
+anchor_bottom = 0.143
+offset_left = 0.0179977
+offset_top = 0.127
+offset_right = -0.0230103
+offset_bottom = -0.201004
+theme_override_font_sizes/font_size = 30
+text = "Config"
+horizontal_alignment = 1
+
+[node name="Container" type="VBoxContainer" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.167
+anchor_right = 0.93
+anchor_bottom = 0.818
+offset_left = -0.117001
+offset_top = 0.0309982
+offset_right = -0.0700378
+offset_bottom = 0.0740051
+
+[node name="NameEdit" type="LineEdit" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel/Container"]
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="VersionEdit" type="LineEdit" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel/Container"]
+layout_mode = 2
+placeholder_text = "Version"
+
+[node name="DescriptionEdit" type="TextEdit" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel/Container"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+placeholder_text = "Description"
+
+[node name="LevelSelect" type="OptionButton" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel/Container"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Config/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.346
+anchor_top = 0.865
+anchor_right = 0.652
+anchor_bottom = 0.961
+offset_left = -0.0540009
+offset_top = -0.0550232
+offset_right = -0.14801
+offset_bottom = -0.127014
+theme_override_font_sizes/font_size = 22
+text = "Save"
+
+[node name="Lists" type="Control" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer"]
+layout_mode = 2
+
+[node name="CheckList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.135
+anchor_right = 0.31
+anchor_bottom = 0.459
+offset_left = 1.921
+offset_top = 0.0549965
+offset_right = 0.289993
+offset_bottom = 0.186996
+item_count = 3
+item_0/text = "Example Node 1"
+item_1/text = "Example Node 2"
+item_2/text = "Example Node 3"
+
+[node name="ExpressionList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.332
+anchor_top = 0.13
+anchor_right = 0.623
+anchor_bottom = 0.462
+offset_left = -0.0120087
+offset_top = 0.0899963
+offset_right = 0.356995
+offset_bottom = -0.0340118
+item_count = 3
+item_0/text = "Example Node 1"
+item_1/text = "Example Node 2"
+item_2/text = "Example Node 3"
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.477
+anchor_right = 0.314
+anchor_bottom = 0.909
+offset_left = 0.143999
+offset_top = 3.86099
+offset_right = 0.325989
+offset_bottom = 0.0369873
+bbcode_enabled = true
+text = "[b]Description[/b]:
+
+Example Description"
+
+[node name="FunctionList" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.652
+anchor_top = 0.13
+anchor_right = 0.962
+anchor_bottom = 0.926
+offset_left = -0.132019
+offset_top = 0.0899963
+offset_right = 0.157959
+offset_bottom = 0.117981
+item_count = 3
+item_0/text = "Example Node 1"
+item_1/text = "Example Node 2"
+item_2/text = "Example Node 3"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.332
+anchor_top = 0.5
+anchor_right = 0.618
+anchor_bottom = 0.924
+offset_left = -1.01201
+offset_top = -1.5
+offset_right = 0.0619812
+offset_bottom = -0.0680237
+theme_override_constants/separation = 23
+
+[node name="AddFunctionButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Add Function"
+
+[node name="AddExpressionButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Add Expression"
+
+[node name="AddCheckButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Program/HSplitContainer/Lists/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Add Check"
+
 [node name="Launch" type="Control" parent="VSplitContainer/Control2/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 5
+
+[node name="ActionBar" type="HBoxContainer" parent="VSplitContainer/Control2/TabContainer/Launch"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.099
+offset_right = -1.0
+offset_bottom = -0.0950012
+alignment = 1
+
+[node name="LaunchButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Launch/ActionBar"]
+layout_mode = 2
+text = "Launch Rover"
+script = ExtResource("4_6i7lc")
+
+[node name="AbortButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Launch/ActionBar"]
+layout_mode = 2
+text = "Abort Mission"
+
+[node name="ShutdownButton" type="Button" parent="VSplitContainer/Control2/TabContainer/Launch/ActionBar"]
+layout_mode = 2
+text = "Emergency Shutdown"
+
+[node name="Console" type="ItemList" parent="VSplitContainer/Control2/TabContainer/Launch"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.284
+anchor_right = 0.979
+anchor_bottom = 0.956
+offset_left = 0.309998
+offset_top = -0.0200043
+offset_right = 0.234009
+offset_bottom = -0.180023
+allow_search = false
+item_count = 3
+item_0/text = "\"Log Message: Day 31\""
+item_0/selectable = false
+item_1/text = "\"Picked up Sample\""
+item_1/selectable = false
+item_2/text = "\"Researched Sample\""
+item_2/selectable = false
+
+[node name="Title" type="Label" parent="VSplitContainer/Control2/TabContainer/Launch"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.397
+anchor_top = 0.128
+anchor_right = 0.568
+anchor_bottom = 0.215
+offset_left = -0.138031
+offset_top = 0.159996
+offset_right = -0.472046
+offset_bottom = -0.0750046
+theme_override_font_sizes/font_size = 25
+text = "Launch Controls"
+
+[node name="ConsoleLabel" type="Label" parent="VSplitContainer/Control2/TabContainer/Launch"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.705
+anchor_top = 0.165
+anchor_right = 0.776
+anchor_bottom = 0.235
+offset_left = 0.429932
+offset_top = 0.174995
+offset_right = -0.504028
+offset_bottom = -0.175003
+theme_override_font_sizes/font_size = 20
+text = "Console"
+
+[node name="ViewportStatus" type="Label" parent="VSplitContainer/Control2/TabContainer/Launch"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.185
+anchor_right = 0.392
+anchor_bottom = 0.254
+offset_left = 1.996
+offset_top = 0.0749969
+offset_right = -0.368011
+offset_bottom = 0.129997
+theme_override_font_sizes/font_size = 20
+text = "Status: Waiting for launch.."

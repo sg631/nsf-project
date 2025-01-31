@@ -26,6 +26,7 @@ data = PackedVector3Array(-1, 0.05, -2, 1, 0.05, -2, -1, 0.05, -1, -1, 0.05, -1,
 [node name="Computer" type="Node3D"]
 
 [node name="Computer" type="StaticBody3D" parent="." groups=["3D_UI"]]
+unique_name_in_owner = true
 script = ExtResource("2_b5cnk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Computer"]

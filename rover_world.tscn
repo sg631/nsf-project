@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3jngbw2ptnk5"]
+
+[ext_resource type="PackedScene" uid="uid://bicta53mwg1mu" path="res://rover.tscn" id="1_a366l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_icma8"]
+ground_bottom_color = Color(0.16, 0.0893333, 0.0752, 1)
+
+[sub_resource type="Sky" id="Sky_18no3"]
+sky_material = SubResource("ProceduralSkyMaterial_icma8")
+
+[sub_resource type="Environment" id="Environment_vdno6"]
+background_mode = 2
+sky = SubResource("Sky_18no3")
+fog_enabled = true
+fog_light_color = Color(0.332129, 0.361554, 0.407806, 1)
+fog_density = 0.0688
+fog_height_density = 6.5882
+
+[node name="RoverWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vdno6")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+
+[node name="Rover" parent="." instance=ExtResource("1_a366l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.06357, 11.1635, 12.9)

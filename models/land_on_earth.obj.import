@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnte6x0ed8mon"
+path="res://.godot/imported/land_on_earth.obj-00608211462130427b30f0248091eef0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/land_on_earth.obj-00608211462130427b30f0248091eef0.mesh"]
+
+source_file="res://models/land_on_earth.obj"
+dest_files=["res://.godot/imported/land_on_earth.obj-00608211462130427b30f0248091eef0.mesh", "res://.godot/imported/land_on_earth.obj-00608211462130427b30f0248091eef0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
